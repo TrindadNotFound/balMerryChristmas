@@ -1,12 +1,16 @@
 import ballerina/http;
-import ballerina/io;
 
 
 service /bal on new http:Listener(9090) 
 {
-    resource function get hohoho() 
+    resource function get hohoho() returns json 
     {
-        io:println("Merry Christmas !!!");
+        json msg = 
+        {
+            "message":"Merry Christmas !!"
+        };
+
+        return msg;
     }
 }
 
