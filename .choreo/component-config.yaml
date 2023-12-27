@@ -1,0 +1,15 @@
+apiVersion: core.choreo.dev/v1alpha1
+kind: ComponentConfig
+metadata:
+  name: ballerinachristmas
+  projectName: MainProject
+  annotations:
+    componentType: service
+spec:
+  inbound:
+    - name: BallerinaChristmas
+      port: 9090
+      type: REST
+      visibility: Public
+      context: /bal
+      schemaFilePath: openapi.yaml
